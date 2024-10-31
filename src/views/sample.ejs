@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Official Day of Falling In Love</title>
+    <style>
+        /* Thiết lập tổng quan cho trang */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Times New Roman', serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f7f7f7;
+            overflow: hidden;
+        }
+
+        /* Khung chính cho thiệp mời */
+        .invitation-card {
+            width: 400px;
+            padding: 20px;
+            background-color: #f8bbd0; /* Màu hồng nhạt */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            border-radius: 10px;
+            border: 2px solid #e5e5e5;
+            position: relative;
+            z-index: 1;
+            cursor: pointer;
+        }
+
+        /* Phong cách cho tiêu đề */
+        .invitation-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #d4886e;
+            margin-bottom: 10px;
+        }
+
+        /* Phong cách cho nội dung chính */
+        .invitation-content {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Phong cách cho tên cô dâu chú rể */
+        .bride-groom {
+            font-size: 26px;
+            color: #333;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        /* Phong cách cho chi tiết ngày giờ */
+        .details {
+            font-size: 18px;
+            color: #777;
+            margin: 20px 0;
+        }
+
+        /* Nút xác nhận */
+        .rsvp-button {
+            padding: 10px 20px;
+            background-color: #d4886e;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .rsvp-button:hover {
+            background-color: #b96e55;
+        }
+
+        /* CSS cho hiệu ứng trái tim */
+        .heart {
+            position: absolute;
+            color: #d4886e;
+            font-size: 20px;
+            animation: float 5s ease-in infinite;
+            opacity: 0.8;
+            display: none; /* Ẩn trái tim khi chưa nhấp */
+        }
+
+        /* Các vị trí ngẫu nhiên cho trái tim */
+        .heart:nth-child(1) { left: 20%; animation-duration: 4s; }
+        .heart:nth-child(2) { left: 40%; animation-duration: 6s; animation-delay: 1s; }
+        .heart:nth-child(3) { left: 60%; animation-duration: 5s; animation-delay: 2s; }
+        .heart:nth-child(4) { left: 80%; animation-duration: 4.5s; animation-delay: 1.5s; }
+
+        /* Animation cho trái tim */
+        @keyframes float {
+            0% {
+                bottom: 0;
+                transform: scale(0.8) rotate(0deg);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1) rotate(20deg);
+                opacity: 0.7;
+            }
+            100% {
+                bottom: 100%;
+                transform: scale(0.8) rotate(45deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="invitation-card" onclick="showHearts()">
+    <div class="invitation-title">The Official Day of Falling In Love</div>
+    <div class="bride-groom">
+        Hiền Trần & Kiệt Trần
+    </div>
+    <div class="invitation-content">
+        Please join us for a day filled with love, laughter, and memories.
+    </div>
+    <div class="details">
+        <p>SunDay, October 27, 2024</p>
+        <p>At 23:00 AM</p>
+    </div>
+    <button class="rsvp-button">RSVP</button>
+</div>
+
+<!-- Thêm các trái tim cho hiệu ứng bay lên -->
+<div class="heart">❤️</div>
+<div class="heart">❤️</div>
+<div class="heart">❤️</div>
+<div class="heart">❤️</div>
+
+<script>
+    function showHearts() {
+        const hearts = document.querySelectorAll('.heart');
+        hearts.forEach(heart => {
+            heart.style.display = 'block'; // Hiển thị trái tim khi nhấp
+        });
+    }
+</script>
+
+</body>
+</html>
