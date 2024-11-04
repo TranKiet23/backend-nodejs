@@ -1,6 +1,14 @@
+const connection = require('../config/database')
+
 const getHomePage = (req, res) => {
-    console.log(req);
-    res.send('hien tran')
+    let users = [];
+    connection.query('SELECT  * FROM Users u ',
+        function (err, result, field) {
+            users = result
+            console.log('users', users);
+            res.send(JSON.stringify(users))
+        }
+    )
 }
 
 const getAge = (req, res) => {
