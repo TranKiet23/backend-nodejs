@@ -7,6 +7,9 @@ const app = express();
 const port = process.env.PORT || 8080;
 const config = require('./config/viewEnginer');
 const webRouter = require('./routers/web')
+
+app.use(express.json())
+app.use(express.urlencoded({  extended : true}))
 config(app);
 app.use('/', webRouter)
 
