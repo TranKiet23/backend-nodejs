@@ -14,8 +14,6 @@ config(app);
 app.use('/', webRouter)
 
 
-
-
 app.listen(port, hostName, () => {
   console.log(`Example app listening on port ${port}`)
 })
